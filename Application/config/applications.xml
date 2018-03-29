@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apps>
+	<app>
+        <name>TestApplication</name >
+        <file>com.sin.app.TestApplication</file >
+     </app>
+</apps>

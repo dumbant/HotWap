@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-compress-1.14.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/commons-vfs2-2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Lib/lib/xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="/Lib/lib/xstream-1.4.10.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Application"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

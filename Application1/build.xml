@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy-web" name="YiShi" basedir="../.">
+	<description>YiShi</description>
+	<echo>build yishi deploy files</echo>
+	<echo>${basedir}</echo>
+
+	<property name="is-debug" value="on" />
+	<property name="java-version" value="1.6" />
+	<property name="app-version" value="0.1" />
+	<property name="webapp-version" value="0.1" />
+	<property name="exclude-svn" value="**/*.svn/*.*" />
+	<property name="app" value="Application1" />
+
+	<property name="patch" value="${basedir}/Application1/patch" />
+	<property name="patchApp" value="${basedir}/Application1/patch/TestApplication" />
+	
+	<!-- 清除历史版本 -->
+	<target name="clean">
+		<delete dir="${patchApp}" />
+	</target>
+
+	<!-- 建立部署所需要的目录结构 -->
+	<target name="init" depends="clean">
+		<mkdir dir="${patchApp}" />
+	</target>
+
+	<!-- 编译项目各个模块 -->
+	<target name="compile-basic">
+		<javac srcdir="${app}/src" destdir="${app}/bin" source="${java-version}" target="${java-version}" debug="${is-debug}" encoding="utf-8"  includeAntRuntime="false"/>
+	</target>
+
+	<!-- 部署项目各个模块 -->
+	<target name="deploy-web" depends="clean,compile-basic">
+		<jar basedir="${app}/bin" destfile="${patchApp}/app_${app-version}.jar">
+			 <manifest>
+			 	<attribute name="Main-Class" value="com.sin.app.TestApplication" />
+			 </manifest>
+		</jar>
+	</target>
+	<target name="deploy-config" >
+		<copy file="${app}/config/applications.xml" todir="${patchApp}/config/" />
+	</target>	
+</project>
